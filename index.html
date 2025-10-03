@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <style>
+    .fancy-title {
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body class="bg-gray-950 flex justify-center items-center min-h-screen">
+  <div class="bg-gray-900 rounded-2xl shadow-xl w-full max-w-md p-6">
+    <h1 class="text-center text-3xl fancy-title font-bold text-gray-100 mb-6">Todo List</h1>
+    
+    <!-- Form -->
+    <div class="flex gap-2 mb-4">
+      <input id="taskInput" type="text" placeholder="Add a todo..."
+        class="flex-1 px-3 py-2 rounded-lg border border-blue-800 bg-gray-800 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500">
+      
+      <input id="dateInput" type="date"
+        class="px-3 py-2 rounded-lg border border-blue-800 bg-gray-800 text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500">
+      
+      <button id="addBtn"
+        class="px-3 py-2 rounded-lg bg-blue-700 hover:bg-blue-800 text-white font-bold flex items-center justify-center text-xl">
+        +
+      </button>
+    </div>
+
+    <!-- Filter & Delete -->
+    <div class="flex justify-between mb-4">
+      <button id="filterBtn" class="px-3 py-2 bg-gray-800 text-gray-200 rounded-lg hover:bg-gray-700">Filter</button>
+      <button id="deleteAllBtn" class="px-3 py-2 bg-red-700 text-white rounded-lg hover:bg-red-800">Delete All</button>
+    </div>
+
+    <!-- Table -->
+    <div class="overflow-x-auto border border-blue-800 rounded-lg">
+      <table class="w-full text-sm text-gray-300">
+        <thead class="bg-gray-800">
+          <tr class="text-left text-gray-200">
+            <th class="py-2 px-3 border-b border-blue-800">Task</th>
+            <th class="py-2 px-3 border-b border-blue-800">Due Date</th>
+            <th class="py-2 px-3 border-b border-blue-800">Status</th>
+            <th class="py-2 px-3 border-b border-blue-800">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="taskList">
+          <tr>
+            <td colspan="4" class="text-center py-4 text-gray-400">No task found</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+</html>
